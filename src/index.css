@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --font-jetbrains: "JetBrains Mono", monospace;
+  --font-ubuntu: "Ubuntu", sans-serif;
+  --color-black: #000000;
+  --color-offwhite: #fafafa;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #b0b0b0 78%, #ffffff 100%);
+  color: #fafafa;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:focus-visible {
+  outline: 3px solid #fafafa;
+  outline-offset: 3px;
+}
+
+/* floating code background */
+@keyframes floatCode {
+  0%   { transform: translateY(0)      rotate(0deg);  opacity: 0; }
+  10%  { opacity: 0.22; }
+  90%  { opacity: 0.22; }
+  100% { transform: translateY(-110vh) rotate(15deg); opacity: 0; }
+}
+
+.floating-code-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.floating-code-bg span {
+  position: absolute;
+  bottom: -2rem;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  animation: floatCode linear infinite;
+  animation-fill-mode: backwards;
+}
+
+/* floating geometric shapes background */
+@keyframes floatShape {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 0; }
+  8%   { opacity: 0.13; }
+  92%  { opacity: 0.13; }
+  100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+.floating-shapes-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.floating-shapes-bg svg {
+  position: absolute;
+  bottom: -3rem;
+  animation: floatShape linear infinite;
+  animation-fill-mode: backwards;
+}
+
+/* matte grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  background-repeat: repeat;
+}
