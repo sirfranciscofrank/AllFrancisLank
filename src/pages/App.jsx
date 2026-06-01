@@ -143,7 +143,7 @@ const LINKS = [
   { label: 'Twitter(X)',         href: 'https://x.com/',                             color: '#1d9bf0', Icon: FaXTwitter  },
   { label: 'YOUTUBE',   href: 'https://www.youtube.com/@SirFranciso',       color: '#FF0000', Icon: FaYoutube   },
   { label: 'INSTAGRAM', href: 'https://www.instagram.com/stfrancisth/',     color: '#E1306C', Icon: FaInstagram },
-  { label: 'EMAIL (Gmail)',     href: 'mailto:sirfrancisco2003@gmail.com',          color: '#06B6D4', Icon: FaEnvelope  },
+  { label: 'Gmail',             href: 'https://mail.google.com',                   color: '#06B6D4', Icon: FaEnvelope  },
   { label: 'PORTFOLIO', href: 'https://sirfranciscofrank-page.vercel.app/', color: '#8B5CF6', Icon: FaGlobe     },
 ]
 
